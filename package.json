@@ -12,7 +12,6 @@
     "passport-google-oauth" : "latest",
     "connect-flash": "latest",
     "bcrypt-nodejs" : "latest",
-
     "morgan": "latest",
     "body-parser": "latest",
     "cookie-parser": "latest",
