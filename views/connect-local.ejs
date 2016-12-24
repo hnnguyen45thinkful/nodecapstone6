@@ -21,6 +21,10 @@
     <!-- LOGIN FORM -->
     <form action="/connect/local" method="post">
         <div class="form-group">
+              <label for="nickname">Nickname:</label>
+              <input type="text" id="nickname" name="nickname" placeholder="">
+          </div>
+        <div class="form-group">
             <label>Email</label>
             <input type="text" class="form-control" name="email">
         </div>
@@ -36,12 +40,10 @@
 
     <p><a href="/profile">Go back to profile</a></p>
 
-    <div class="text-center">
-        <p>A demo by <a href="http://scotch.io">Scotch</a>.</p>
-        <p>Visit the <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">tutorial</a>.</p>
-    </div>
 
 </div>
 </div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="/app.js"></script> 
 </body>
 </html>
