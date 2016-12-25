@@ -1,7 +1,9 @@
 body{
  	padding-top:80px; 
  	word-wrap:break-word;
+ 	background-image: url(../images/pic1.jpg);
+ 	background-repeat: none;
+ 	background-position: center center;
+ 	position: relative;
+ 	padding: 50px 0; 
  }
-img {
-	background-image: cover
-}

@@ -29,6 +29,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
+// set static files (css and images, etc) location
+app.use(express.static(__dirname + '/public'));
+
 // required for passport
 app.use(session({
     secret: 'anystringoftext', // session secret
