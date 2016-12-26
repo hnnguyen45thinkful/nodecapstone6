@@ -19,19 +19,30 @@ body{
 
 .img1 {
 	background-image: url(../images/pic1.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 .img2 {
 	background-image: url(../images/pic4.jpg); 
-	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 .img3 {
-	background-image: url(../images/pic3.jpg); 
-	background-size: cover;
+	background-image: url(../images/pic7.png); 
+    background-repeat: none;
+    height: 300px;
+    width : 500px;
+    background-position: center; 
+
 }
 
 .img4 {
 	background-image: url(../images/pic2.jpg); 
-	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
