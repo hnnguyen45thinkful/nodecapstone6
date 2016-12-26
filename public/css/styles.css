@@ -3,19 +3,35 @@ body{
  	word-wrap:break-word;
  }
 
-.image1 {
+.title1{
+	font-size: 50px;
+}
+
+.text-center{
+	background-color: rgba(0,255,0,0.3);
+	border: 10px solid black;
+
+}
+#instructions{
+	font-size: 30px;
+
+}
+
+.img1 {
 	background-image: url(../images/pic1.jpg);
- 	back 
 }
 
-.image2{
-
+.img2 {
+	background-image: url(../images/pic4.jpg); 
+	background-size: cover;
 }
 
-.image3{
-
+.img3 {
+	background-image: url(../images/pic3.jpg); 
+	background-size: cover;
 }
 
-.image4{
-
+.img4 {
+	background-image: url(../images/pic2.jpg); 
+	background-size: cover;
 }
