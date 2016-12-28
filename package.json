@@ -3,6 +3,7 @@
   "main": "server.js",
   "dependencies" : {
     "express": "latest",
+    "express-ejs-layouts": "latest",
     "ejs": "latest",
     "mongoose": "latest",
     "passport": "latest",
@@ -16,6 +17,14 @@
     "body-parser": "latest",
     "cookie-parser": "latest",
     "method-override": "latest",
-    "express-session": "latest"
+    "express-session": "latest",
+    "path": "latest",
+    "unirest": "latest",
+    "nodemon": "latest"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.0.2"
   }
 }

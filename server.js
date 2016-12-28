@@ -3,10 +3,14 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
+var expressLayouts = require('express-ejs-layouts');
+var unirest = require('unirest');//Added unirest.
+var path = require('path');//added on to the server.js
 var app      = express();
 var port     = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
+var bcrypt = require('bcrypt-nodejs');
 var flash    = require('connect-flash');
 
 var morgan       = require('morgan');
@@ -15,8 +19,9 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
-
+var models = require('./app/models/users');
 // configuration ===============================================================
+mongoose.Promise = global.Promise;//Due to message on my gitbash and also on the website.
 mongoose.connect(configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
@@ -27,10 +32,12 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// use ejs and express layouts
 app.set('view engine', 'ejs'); // set up ejs for templating
+app.use(expressLayouts);
 
-// set static files (css and images, etc) location
-app.use(express.static(__dirname + '/public'));
+// set static files (css and images, etc) location and also using path npm.
+app.use(express.static(path.join(__dirname + '/public'));
 
 // required for passport
 app.use(session({
@@ -43,7 +50,10 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./app/routes.js')(app, passport, unirest); // load our routes and pass in our app and fully configured passport
+
+//Load app from exports from folder.
+exports.app = app;
 
 // launch ======================================================================
 app.listen(port);
