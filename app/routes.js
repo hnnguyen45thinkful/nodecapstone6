@@ -1,3 +1,5 @@
+var User       = require('./models/user');
+var Bill       = require('./models/bill');
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -7,11 +9,28 @@ module.exports = function(app, passport) {
         res.render('index.ejs');
     });
 
+
+    app.post('/insert', function(req,res){
+        Bill.create({name: req.body.name, amount: req.body.amount}, function(err, bill){
+            if(!err){
+                res.send(bill);
+            }
+        });
+    });
+
+
+// change the bill model to have a userid property, change the insert method to set userid: req.user._id
+// change the profile to only find bills where userid: req.user._id
+
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user
+        Bill.find({},function(err,data){
+            res.render('profile.ejs', {
+                user : req.user,
+                bills: data
+            });
         });
+        
     });
 
     // LOGOUT ==============================
