@@ -9,8 +9,9 @@ body{
 }
 
 .text-center{
-	background-color: rgba(0,255,0,0.3);
+	background-color: rgba(0,255,0,0.5);
 	border: 10px solid black;
+
 
 }
 #instructions{
@@ -27,9 +28,6 @@ body{
 
 .img2 {
 	background-image: url(../images/pic4.jpg); 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
 }
 
 .img3 {
