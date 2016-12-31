@@ -18,6 +18,7 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.delete('/')
 
 // change the bill model to have a userid property, change the insert method to set userid: req.user._id
 // change the profile to only find bills where userid: req.user._id

@@ -4,10 +4,11 @@ var bcrypt   = require('bcrypt-nodejs');
 
 // define the schema for our user model
 var billSchema = mongoose.Schema({
-
     name: String,
     amount: Number
 });
 
+var Bill = mongoose.model('Bill', billSchema);
+
 // create the model for users and expose it to our app
-module.exports = mongoose.model('Bill', billSchema);
+module.exports = Bill;
