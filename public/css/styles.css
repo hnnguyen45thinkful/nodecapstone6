@@ -4,8 +4,14 @@ body{
  	word-wrap:break-word;
  }
 
+.profile1{
+	font-size: 40px;
+	font-weight: bold;
+}
+
 .title1{
 	font-size: 50px;
+	font-weight: bold;
 }
 
 .text-center{

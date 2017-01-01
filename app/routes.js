@@ -19,7 +19,7 @@ module.exports = function(app, passport) {
     });
 
     app.delete('/', function(req,res){
-
+        
     });
 
 
