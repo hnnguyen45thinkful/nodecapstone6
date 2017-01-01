@@ -3,6 +3,17 @@ body{
  	padding-top:80px; 
  	word-wrap:break-word;
  }
+.bottom{
+	font-size: 25px;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-weight: bold;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 30px;
+	background: rgba(255, 0, 0, 0.5);
+
+}
 
 .profile1{
 	font-size: 40px;
@@ -16,8 +27,6 @@ body{
 
 .text-center{
 	background-color: rgba(0,255,0,0.5);
-	border: 10px solid black;
-
 
 }
 #instructions{

@@ -1,44 +1,6 @@
-<!doctype html>
-<html>
+<% include includes/headers.ejs %>
 
-<head>
-    <title>Budget Record Tracker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!--This is to load and help with normalize the webpage stylesheet -->   
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-   <!--This is to load Bootstrap CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> 
-    <!-- Fonts and Font-Awesomeness and CSS from Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <!--This is to load CSS styles in the public folder-->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class='img1'>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '321887081544096',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<div class="container">
+<div class="container text-center">
 
     <div class = "text-center">
         <h1 class = "title1" ><span class="fa fa-lock"></span>Budget Record Tracker</h1>
@@ -49,9 +11,13 @@
         <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
         <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
     </div>
+</div>
 
-<!--Load and apply jquery with also a app.js file.-->
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>  
-</body>
-</html>
+  <div class ="bottom">
+
+    <div><br>
+    <br>About Us:</br>
+    Here you can view your bill(s). Next, then enter something you recently purchased anywhere in the first box. Then, in the second item box, enter the amount you paid when you brought it anywhere. This is going to display how much money in the past and compare how much are you are going to spend again in months or years. 
+    </div><br>
+
+<% include includes/footers.ejs %>
