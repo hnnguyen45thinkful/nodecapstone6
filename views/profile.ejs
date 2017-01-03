@@ -41,12 +41,90 @@
                 <% } %>
     </div>
 </section>
+
 </div>
     <form action="/delete" method="post">
         </div>
         <button type="submit">DELETE</button>
     </form>
-
+<div class="container">
+    <h1>"BUDGET RECORD TRACKER EXPENSES"</h1>
+<div id="wrapper">
+  <div id="expense-container">
+    <button id="goToExpense">Add Expense</button>
+    <button id="goToIncome">Add Income</button>
+    <div id="expenseList">
+      <table class="table-bordered expenses-table">
+        <thead>
+          <th id="expenseHead">Name</th>
+          <th id="expenseHead">Company</th>
+          <th id="expenseHead">Type</th>
+          <th id="expenseHead">Monthly Cost</th>
+          <th id="expenseHead">Day of Month</th>
+          <th id="expenseHead">Delete</th>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total Expense
+              <td> </td>
+              <td></td>
+              <td id="totalFeeMonthly"></td>
+              <td></td>
+              <td></td>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div id="incomeContainer">
+    <div id="incomeList">
+      <table class="table-bordered incomes-table">
+        <thead>
+          <th id="incomeHead">Employee</th>
+          <th id="incomeHead">Company</th>
+          <th id="incomeHead">Title</th>
+          <th id="incomeHead">Hours Per Week</th>
+          <th id="incomeHead">Hourly Pay</th>
+          <th id="incomeHead">Weekly Pay</th>
+          <th id="incomeHead">Monthly Pay</th>
+          <th id="incomeHead">Yearly Pay</th>
+          <th id="incomeHead">Delete</th>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">After Tax
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td id="totalIncomeWeeklyAfterTax"></td>
+              <td id="totalIncomeMonthlyAfterTax"></td>
+              <td id="totalIncomeYearlyAfterTax"></td>
+              <td></td>
+            </th>
+          </tr>
+        </tfoot>
+        <tfoot>
+          <tr>
+            <th scope="row">Total Income
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td id="totalIncomeWeekly"></td>
+              <td id="totalIncomeMonthly"></td>
+              <td id="totalIncomeYearly"></td>
+              <td></td>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+ </div>
 
 
 
