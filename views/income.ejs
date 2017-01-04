@@ -1,3 +1,5 @@
+<% include includes/headers.ejs %>
+
 <div id="addIncomeContainer">
   <form id="addIncomeForm" action="/incomes/addincome" method="post">
     <ul class="form-style-1">
@@ -35,4 +37,5 @@
     </ul>
   </form>
 </div>
-<script>$('#payPeriod').on('change', changeIncomeInputFields);</script>
+
+<% include includes/footers.ejs %>
