@@ -1,0 +1,41 @@
+<div id="addExpenseContainer">
+  <form id="addExpenseForm" action="/expenses/addexpense" method="post">
+    <ul class="form-style-1">
+      <li> 
+        <h5>Add Expense</h5>
+      </li>
+      <li>
+        <label>Name of Expense<span class="required">*</span></label>
+        <input class="field-long" type="text" name="name_of_expense" placeholder="Electric Bill"/>
+      </li>
+      <li>
+        <label>Company/Person Billable To <span class="required">*</span></label>
+        <input class="field-long" type="text" name="company_name" placeholder="Con Edison"/>
+      </li>
+      <li>
+        <label>Payee<span class="required">*</span></label>
+        <input class="field-long" type="text" name="payee" placeholder="George"/>
+      </li>
+      <li id="payPeriod">
+        <label>Fee Period</label>
+        <select class="payPeriodSelect field-select" name="pay_period">
+          <option value="Monthly">Monthly</option>
+          <option value="Yearly">Yearly</option>
+          <option value="Weekly">Weekly</option>
+        </select>
+      </li>
+      <li id="dayOfMonthLi">
+        <label><span class="dayOfMonth">Day of Month</span></label>
+        <input class="dayOfMonth field-short" id="field5" type="text" name="day_of_month" placeholder="15"/>
+      </li>
+      <li>
+        <label> <span class="salaryTerm">Monthly  </span>Fee<span class="required">*</span></label>
+        <input class="salary field-short" id="field5" type="text" name="monthly" placeholder="350"/>
+      </li>
+      <li>
+        <input type="submit" value="Submit"/>
+      </li>
+    </ul>
+  </form>
+</div>
+<script>$('#payPeriod').on('change', changeExpenseInputFields);</script>
