@@ -3,14 +3,14 @@ var mongoose = require('mongoose');
 //var bcrypt   = require('bcrypt-nodejs');//Not Required
 
 // define the schema for our user model
-var incomeSchema = mongoose.Schema({
-    name_of_worker: String,
+var expenseSchema = mongoose.Schema({
+    name_of_expense: String,
     company_name: String,
-    company_title: String,
-    pay_period:
+    payee: String,
+    pay_period: ,
 });
 
-var Income = mongoose.model('Income', incomeSchema);
+var Expense = mongoose.model('Expense', billSchema);
 
 // create the model for users and expose it to our app
-module.exports = Income;
+module.exports = Expense;
