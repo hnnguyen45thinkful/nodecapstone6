@@ -10,7 +10,7 @@ var expenseSchema = mongoose.Schema({
     pay_period: ,
 });
 
-var Expense = mongoose.model('Expense', billSchema);
+var Expense = mongoose.model('Expense', expenseSchema);
 
 // create the model for users and expose it to our app
 module.exports = Expense;
