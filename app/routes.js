@@ -26,6 +26,21 @@ module.exports = function(app, passport) {
 
 // change the bill model to have a userid property, change the insert method to set userid: req.user._id
 // change the profile to only find bills where userid: req.user._id
+app.get('/', function(req, res) {
+    res.render('profile');
+});
+
+app.get('/profile', function(req, res) {
+    res.render('profile');
+});
+
+app.get('/income', function(req, res){
+    res.render('income');
+});
+
+app.get('/expense', function(req, res){
+    res.render('expense');
+});
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {

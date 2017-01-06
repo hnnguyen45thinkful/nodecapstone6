@@ -20,7 +20,8 @@
     "express-session": "latest",
     "path": "latest",
     "unirest": "latest",
-    "nodemon": "latest"
+    "nodemon": "latest",
+    "monk": "latest"
   },
   "devDependencies": {
     "chai": "^3.5.0",
