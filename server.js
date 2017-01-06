@@ -17,6 +17,8 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 // configuration ===============================================================
+//var db = 'mongodb://localhost/budget'
+//mongoose.connect(db);
 mongoose.Promise = global.Promise;//Due to message on my gitbash and also on the website.
 mongoose.connect(configDB.url); // connect to our database
 
@@ -49,6 +51,9 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 //Load app from exports from folder.
 exports.app = app;
+
+
+
 
 // launch ======================================================================
 app.listen(port);

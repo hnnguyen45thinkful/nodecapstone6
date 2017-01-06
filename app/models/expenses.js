@@ -2,17 +2,9 @@
 var mongoose = require('mongoose');
 //var bcrypt   = require('bcrypt-nodejs');//Not Required
 
-// var myDB = 'mongodb://localhose/dbName';
+// var myDB = 'mongodb://localhost/dbName';
 //mongoose.connec(myDB);
 
-
-// define the schema for our user model
-var expenseSchema = mongoose.Schema({
-    name_of_expense: String,
-    company_name: String,
-    payee: String,
-    pay_period: ,
-});
 
 // Valid Types of Schema Types mongoosejs.com/docs/schematypes.html
 //String,
@@ -25,9 +17,17 @@ var expenseSchema = mongoose.Schema({
 //Array
 
 
+// define the schema for our user model
+var expenseSchema = mongoose.Schema({
+    name_of_expense: String,
+    company_name: String,
+    payee: String,
+    pay_period: {
 
-
-
+    	required: true,
+    },
+    date_of_month: Date.now;
+});
 
 var Expense = mongoose.model('Expense', expenseSchema);
 
