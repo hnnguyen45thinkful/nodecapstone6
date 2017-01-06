@@ -1,7 +1,7 @@
 var User       = require('./models/user');
-var Bill       = require('./models/bill');
-//var expenses = require('./models/expenses');
-//var incomes  = require('./models/incomes');
+//var Bill       = require('./models/bill');
+var Expense = require('./models/expenses');
+var Income  = require('./models/incomes');
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================

@@ -23,10 +23,10 @@ var expenseSchema = mongoose.Schema({
     company_name: String,
     payee: String,
     pay_period: {
-
-    	required: true,
+    	type: String,
+    	required: true
     },
-    date_of_month: Date.now;
+    date_of_month:{type: Date, default: Date.now}
 });
 
 var Expense = mongoose.model('Expense', expenseSchema);
