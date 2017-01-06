@@ -11,18 +11,17 @@ module.exports = function(app, passport) {
         res.render('index.ejs');
     });
 
+   // // app.post('/insert', function(req,res){
+   //      Bill.create({name: req.body.name, amount: req.body.amount}, function(err, bill){
+   //          if(!err){
+   //              res.send(bill);
+   //          }
+   //      });
+   //  });
 
-    app.post('/insert', function(req,res){
-        Bill.create({name: req.body.name, amount: req.body.amount}, function(err, bill){
-            if(!err){
-                res.send(bill);
-            }
-        });
-    });
-
-    app.delete('/', function(req,res){
+    // app.delete('/', function(req,res){
         
-    });
+    // });
 
 
 // change the bill model to have a userid property, change the insert method to set userid: req.user._id
@@ -30,13 +29,9 @@ module.exports = function(app, passport) {
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        Bill.find({},function(err,data){
-            res.render('profile.ejs', {
-                user : req.user,
-                bills: data
-            });
+        res.render('profile.ejs', {
+            user : req.user // get the user out of session and pass to template
         });
-        
     });
 
     // LOGOUT ==============================
