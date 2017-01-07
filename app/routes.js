@@ -30,24 +30,39 @@ app.get('/', function(req, res) {
     res.render('profile');
 });
 
-app.get('/profile', function(req, res) {
-    res.render('profile');
+app.get('/profile', isLoggedIn, function(req, res) {
+    Income.find({user_id:req.user._id},function(err,incomes){
+        if(!err){
+            res.render('profile.ejs',{incomes:incomes});
+        }
+    });
+    
 });
 
 app.get('/income', function(req, res){
-    res.render('income');
+    // Income.create
+    res.render('income.ejs',{user:req.user});
+});
+
+app.post('/incomes/addincome',function(req,res){
+    Income.create(req.body, function(err,income){
+        if(!err){
+            res.redirect('/profile');
+        }
+    });
 });
 
 app.get('/expense', function(req, res){
-    res.render('expense');
+    // Expense.create
+    res.render('expense.ejs');
 });
 
     // PROFILE SECTION =========================
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
+    // app.get('/profile', isLoggedIn, function(req, res) {
+    //     res.render('profile.ejs', {
+    //         user : req.user // get the user out of session and pass to template
+    //     });
+    // });
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {

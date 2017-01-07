@@ -47,13 +47,22 @@
           <th id="incomeHead">Company</th>
           <th id="incomeHead">Title</th>
           <th id="incomeHead">Hours Per Week</th>
-          <th id="incomeHead">Hourly Pay</th>
-          <th id="incomeHead">Weekly Pay</th>
-          <th id="incomeHead">Monthly Pay</th>
-          <th id="incomeHead">Yearly Pay</th>
+          <th id="incomeHead">Rate of Pay</th>
+          <th id="incomeHead">Amount</th>
           <th id="incomeHead">Delete</th>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <% for(var i=0; i<incomes.length; i++){ %>
+            <tr>
+              <td><%=incomes[i].name_of_worker%></td>
+              <td><%=incomes[i].company_name%></td>
+              <td><%=incomes[i].company_title%></td>
+              <td></td>
+              <td><%=incomes[i].pay_period%></td>
+              <td><%=incomes[i].yearly%></td>
+            </tr>
+          <% } %>
+        </tbody>
         <tfoot>
           <tr>
             <th scope="row">After Tax
@@ -62,8 +71,6 @@
               <td></td>
               <td></td>
               <td id="totalIncomeWeeklyAfterTax"></td>
-              <td id="totalIncomeMonthlyAfterTax"></td>
-              <td id="totalIncomeYearlyAfterTax"></td>
               <td></td>
             </th>
           </tr>

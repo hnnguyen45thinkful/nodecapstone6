@@ -2,6 +2,7 @@
 
 <div id="addIncomeContainer">
   <form id="addIncomeForm" action="/incomes/addincome" method="post">
+    <input type="hidden" name="user_id" value="<%=user._id%>"/>
     <ul class="form-style-1">
       <li> 
         <h5>Add Income</h5>
@@ -9,23 +10,14 @@
       <li>
         <label>Name of Employee<span class="required">*</span></label>
         <input class="field-long" type="text" name="name_of_worker" placeholder="Hugh"/>
-            <% for (var i=0; i<name_of_worker<length; i++) { %>
-              <%= name_of_worker[i] %>
-      <% }%>
       </li>
       <li>
         <label>Company Name <span class="required">*</span></label>
         <input class="field-long" type="text" name="company_name" placeholder="Google/Uber"/>
-      <% for (var i=0; i<company_name<length; i++) { %>
-         <%= company_name[i] %>   
-      <% }%>
       </li>
       <li>
         <label>Company Title <span class="required">*</span></label>
         <input class="field-long" type="text" name="company_title" placeholder="Software Engineer"/>
-      <% for (var i=0; i<company_title<length;) {%>
-        <%= company_title[i] %>
-      <% }%>
       </li>
       <li id="payPeriod">
         <label>Pay Period</label>
@@ -35,17 +27,10 @@
           <option value="Weekly">Weekly</option>
           <option value="Hourly">Hourly</option>
         </select>
-      <% for (var i=0; i<pay_period<length; i++) { %>
-          <%= pay_period[i] %>
-      <% }%>
-
       </li>
       <li>
         <label> <span class="salaryTerm">Yearly  </span>Salary<span class="required">*</span></label>
         <input class="salary field-short" id="field5" type="text" name="yearly" placeholder="40000"/>
-      <% for (var i=0; i<yearly<length; i++) { %>
-          <%= yearly[i] %>
-      <% }%>
       </li>
       <li>
         <input type="submit" value="Submit"/>
