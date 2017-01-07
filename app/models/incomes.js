@@ -7,7 +7,8 @@ var incomeSchema = mongoose.Schema({
     name_of_worker: String,
     company_name: String,
     company_title: String,
-    pay_period: String
+    pay_period: [String],
+    yearly: Number
 });
 
 var Income = mongoose.model('Income', incomeSchema);

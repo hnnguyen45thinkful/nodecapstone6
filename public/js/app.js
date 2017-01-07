@@ -1,5 +1,6 @@
 //added this for the jquery process...
-$(document).ready(function(){
+var totalIncomeMonthlyAfterTax = 0;
+var totalExpensesMonthly = 0;
 	//expense.ejs updating
 	$('#payPeriod').on('change', changeExpenseInputFields);
 
@@ -11,4 +12,8 @@ $(document).ready(function(){
     $('#expenseList table tbody').on('click', 'td a.deleteExpenseLink', deleteExpense);
     //income.ejs
     $('#incomeList table tbody').on('click', 'td a.deleteIncomeLink', deleteIncome);
+
+
+$(document).ready(function(){
+
 });

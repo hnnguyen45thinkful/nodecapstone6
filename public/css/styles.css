@@ -127,6 +127,12 @@ button:hover {
   background: #bdc3c7;
 }
 
+h5{
+  font-size:30px;
+  font-weight: bolder;
+}
+
+
 .item {
   margin: 10px 0;
   padding: 5px;

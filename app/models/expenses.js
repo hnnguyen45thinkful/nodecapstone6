@@ -26,7 +26,8 @@ var expenseSchema = mongoose.Schema({
     	type: String,
     	required: true
     },
-    date_of_month:{type: Date, default: Date.now}
+    date_of_month:{type: Date, default: Date.now},
+    monthly: String
 });
 
 var Expense = mongoose.model('Expense', expenseSchema);
