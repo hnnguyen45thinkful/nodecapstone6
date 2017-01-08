@@ -57,10 +57,39 @@ app.get('/expense', function(req, res){
     res.render('expense.ejs');
 });
 
+// INCOMES
+// app.post('/addincome', function(req, res){
+//     incomes.insert( req.body, function(err, result){
+//         if(err != null) res.send('Insert Income Error');
+//         else res.redirect('/');
 
+//     });
+// });
+
+// app.get('/incomelist', function(req, res){
+//     incomes.find({},{},function(e,docs){
+//         res.json(docs);
+//     });
+// });
+
+//EXPENSES
+// app.get('/expenselist', function(req, res){
+//     Expense.find({},{},function(e,docs){
+//         res.json(docs);
+//     });
+// });
+
+// app.post('/addexpense', function(req,res){
+//     Expense.insert( req.body, function(err, result){
+//         if(err != null) res.send('Insert Income Error');
+//         else res.redirect('/');
+//     });
+// });
+
+// DELETE
 // app.delete('/deleteincome/:id', function(req, res){
 //     var incomeToDelete = req.params.id;
-//     incomes.remove({ '_id' : incomeToDelete }, function(err,income){
+//     Income.remove({ '_id' : incomeToDelete }, function(err,income){
 //         res.send(
 //            (err !== null) ? { msg : err } : { msg : 'success' }
 //         );
