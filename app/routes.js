@@ -58,24 +58,24 @@ app.get('/expense', function(req, res){
 });
 
 
-app.delete('/deleteincome/:id', function(req, res){
-    var incomeToDelete = req.params.id;
-    incomes.remove({ '_id' : incomeToDelete }, function(err,income){
-        res.send(
-           (err !== null) ? { msg : err } : { msg : 'success' }
-        );
-    });
-});
+// app.delete('/deleteincome/:id', function(req, res){
+//     var incomeToDelete = req.params.id;
+//     incomes.remove({ '_id' : incomeToDelete }, function(err,income){
+//         res.send(
+//            (err !== null) ? { msg : err } : { msg : 'success' }
+//         );
+//     });
+// });
 
 
-app.delete('/deleteexpense/:id', function(req, res){   
-    var expensesToDelete = req.params.id;
-    Expense.remove({ '_id' : expensesToDelete }, function(err, expense){
-        res.send(
-           (err !== null) ? { msg : err } : { msg : 'success' }
-        );
-    });
-});
+// app.delete('/deleteexpense/:id', function(req, res){   
+//     var expensesToDelete = req.params.id;
+//     Expense.remove({ '_id' : expensesToDelete }, function(err, expense){
+//         res.send(
+//            (err !== null) ? { msg : err } : { msg : 'success' }
+//         );
+//     });
+// });
 
     // PROFILE SECTION =========================
     // app.get('/profile', isLoggedIn, function(req, res) {

@@ -11,6 +11,8 @@ var incomeSchema = mongoose.Schema({
     pay_period: String,
     yearly: Number,
     user_id: String,
+
+//Ask Question delete button which schema.
 });
 
 var Income = mongoose.model('Income', incomeSchema);

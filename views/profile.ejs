@@ -24,7 +24,16 @@
           <th id="expenseHead">Day of Month</th>
           <th id="expenseHead">Delete</th>
         </thead>
-        <tbody></tbody>
+        <tbody><% for(var i=0; i<incomes.length; i++){ %>
+            <tr>
+              <td><%=expenses[i].name_of_expense%></td>
+              <td><%=expenses[i].company_name%></td>
+              <td><%=expenses[i].payee%></td>
+              <td><%=expenses[i].pay_period%></td>
+              <td><%=expenses[i].date_of_month%></td>
+              <td><%=expenses[i].monthly%></td>
+            </tr>
+          <% } %></tbody>
         <tfoot>
           <tr>
             <th scope="row">Total Expense

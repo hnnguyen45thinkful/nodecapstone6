@@ -2,6 +2,8 @@
 
 <div id="addExpenseContainer">
   <form id="addExpenseForm" action="/expenses/addexpense" method="post">
+    <input type="hidden" name="user_id" value="<%=user._id%>"/>
+
     <ul class="form-style-1">
       <li> 
         <h5>Add Expense</h5>

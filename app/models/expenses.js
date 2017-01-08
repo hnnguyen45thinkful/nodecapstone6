@@ -27,7 +27,10 @@ var expenseSchema = mongoose.Schema({
     	required: true
     },
     date_of_month:{type: Date, default: Date.now},
-    monthly: String
+    monthly: String,
+    user_id : String 
+//Ask Question delete button which schema.
+
 });
 
 var Expense = mongoose.model('Expense', expenseSchema);
