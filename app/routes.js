@@ -31,11 +31,18 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-    Income.find({user_id:req.user._id},function(err,incomes){
-        if(!err){
-            res.render('profile.ejs',{incomes:incomes});
-        }
+    var incomes;
+    var expenses;
+    Income.find({user_id:req.user._id}).exec()
+    .then(function(data){
+        incomes = data;
+        return Expense.find({user_id:req.user._id}).exec();
+    })
+    .then(function(data){
+        expenses = data;
+        res.render('profile.ejs',{incomes:incomes,expenses:expenses});
     });
+    
     
 });
 
@@ -52,9 +59,16 @@ app.post('/incomes/addincome',function(req,res){
     });
 });
 
+app.post('/expenses/addexpense', function(req,res){
+    Expense.create(req.body, function(err, result){
+        if(err != null) res.send('Insert Income Error');
+        else res.redirect('/profile');
+    });
+});
+
 app.get('/expense', function(req, res){
     // Expense.create
-    res.render('expense.ejs');
+    res.render('expense.ejs',{user:req.user});
 });
 
 // INCOMES
@@ -79,12 +93,7 @@ app.get('/expense', function(req, res){
 //     });
 // });
 
-// app.post('/addexpense', function(req,res){
-//     Expense.insert( req.body, function(err, result){
-//         if(err != null) res.send('Insert Income Error');
-//         else res.redirect('/');
-//     });
-// });
+
 
 // DELETE
 // app.delete('/deleteincome/:id', function(req, res){

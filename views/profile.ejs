@@ -12,8 +12,8 @@
     <h1>"BUDGET RECORD TRACKER EXPENSES"</h1>
 <div id="wrapper">
   <div id="expense-container">
-    <button id="goToExpense">Add Expense</button>
-    <button id="goToIncome">Add Income</button>
+    <a id="goToExpense" href="/expense">Add Expense</a>
+    <a id="goToIncome" href="/income">Add Income</a>
     <div id="expenseList">
       <table class="table-bordered expenses-table">
         <thead>
@@ -24,7 +24,8 @@
           <th id="expenseHead">Day of Month</th>
           <th id="expenseHead">Delete</th>
         </thead>
-        <tbody><% for(var i=0; i<incomes.length; i++){ %>
+        <tbody>
+        <% for(var i=0; i<expenses.length; i++){ %>
             <tr>
               <td><%=expenses[i].name_of_expense%></td>
               <td><%=expenses[i].company_name%></td>
@@ -69,6 +70,7 @@
               <td><%=incomes[i].hours_work%></td>
               <td><%=incomes[i].pay_period%></td>
               <td><%=incomes[i].yearly%></td>
+            %<!--Insert Delete Button????-->%
             </tr>
           <% } %>
         </tbody>
