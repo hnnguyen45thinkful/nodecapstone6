@@ -28,7 +28,7 @@ var expenseSchema = mongoose.Schema({
     },
     date_of_month:{type: Date, default: Date.now},
     monthly: String,
-    user_id : String 
+    user_id : String  
 //Ask Question delete button which schema.
 
 });
