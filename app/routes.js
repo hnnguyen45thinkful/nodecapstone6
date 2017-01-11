@@ -30,6 +30,16 @@ app.get('/', function(req, res) {
     res.render('profile');
 });
 
+app.get('/income', function(req, res){
+    // Income.create
+    res.render('income.ejs',{user:req.user});
+});
+
+app.get('/expense', function(req, res){
+    // Expense.create
+    res.render('expense.ejs',{user:req.user});
+});
+
 app.get('/profile', isLoggedIn, function(req, res) {
     var incomes;
     var expenses;
@@ -44,11 +54,6 @@ app.get('/profile', isLoggedIn, function(req, res) {
     });
     
     
-});
-
-app.get('/income', function(req, res){
-    // Income.create
-    res.render('income.ejs',{user:req.user});
 });
 
 app.post('/incomes/addincome',function(req,res){
@@ -66,10 +71,28 @@ app.post('/expenses/addexpense', function(req,res){
     });
 });
 
-app.get('/expense', function(req, res){
-    // Expense.create
-    res.render('expense.ejs',{user:req.user});
+// DELETE
+app.delete('/deleteincome/:id', function(req, res){
+    var incomeToDelete = req.params.id;
+    Income.remove({ '_id' : incomeToDelete }, function(err,income){
+        res.send(
+           (err !== null) ? { msg : err } : { msg : 'success' }
+        );
+    });
 });
+
+
+app.delete('/deleteexpense/:id', function(req, res){   
+    var expensesToDelete = req.params.id;
+    Expense.remove({ '_id' : expensesToDelete }, function(err, expense){
+        res.send(
+           (err !== null) ? { msg : err } : { msg : 'success' }
+        );
+    });
+});
+
+
+
 
 // INCOMES
 // app.post('/addincome', function(req, res){
