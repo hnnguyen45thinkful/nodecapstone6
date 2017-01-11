@@ -103,18 +103,18 @@ app.delete('/deleteexpense/:id', function(req, res){
 //     });
 // });
 
-// app.get('/incomelist', function(req, res){
-//     incomes.find({},{},function(e,docs){
-//         res.json(docs);
-//     });
-// });
+app.get('/incomelist', function(req, res){
+    Incomes.find({},{},function(e,docs){
+        res.json(docs);
+    });
+});
 
 //EXPENSES
-// app.get('/expenselist', function(req, res){
-//     Expense.find({},{},function(e,docs){
-//         res.json(docs);
-//     });
-// });
+app.get('/expenselist', function(req, res){
+    Expense.find({},{},function(e,docs){
+        res.json(docs);
+    });
+});
 
 
 
