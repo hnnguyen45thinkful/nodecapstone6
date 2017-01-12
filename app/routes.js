@@ -75,7 +75,7 @@ app.post('/expenses/addexpense', function(req,res){
 app.delete('/deleteincome/:id', function(req, res){
     var incomeToDelete = req.params.id;
     Income.remove({ '_id' : incomeToDelete }, function(err,income){
-        res.send(
+        res.find(
            (err !== null) ? { msg : err } : { msg : 'success' }
         );
     });
@@ -85,7 +85,7 @@ app.delete('/deleteincome/:id', function(req, res){
 app.delete('/deleteexpense/:id', function(req, res){   
     var expensesToDelete = req.params.id;
     Expense.remove({ '_id' : expensesToDelete }, function(err, expense){
-        res.send(
+        res.find(
            (err !== null) ? { msg : err } : { msg : 'success' }
         );
     });
@@ -96,7 +96,7 @@ app.delete('/deleteexpense/:id', function(req, res){
 
 // INCOMES
 // app.post('/addincome', function(req, res){
-//     incomes.insert( req.body, function(err, result){
+//     Incomes.insert( req.body, function(err, result){
 //         if(err != null) res.send('Insert Income Error');
 //         else res.redirect('/');
 

@@ -24,6 +24,8 @@
           <th id="expenseHead">Day of Month</th>
           <th id="expenseHead">Monthly Fee</th>
           <th id="expenseHead">Delete</th>
+          <th id="expenseHead">Edit/Update</th>
+
         </thead>
         <tbody>
         <% for(var i=0; i<expenses.length; i++){ %>
@@ -35,6 +37,7 @@
               <td><%=expenses[i].date_of_month%></td>
               <td><%=expenses[i].monthly%></td>
               <td><a href ="#" class="deleteExpenseLink">DELETE</a>
+              <td><a href ="#" class="updateExpenseLink">EDIT/UPDATE</a>
             </tr>
           <% } %></tbody>
         <tfoot>
@@ -62,6 +65,7 @@
           <th id="incomeHead">Rate of Pay</th>
           <th id="incomeHead">Amount</th>
           <th id="incomeHead">Delete</th>
+          <th id="incomeHead">Edit/Update</th>
         </thead>
         <tbody>
           <% for(var i=0; i<incomes.length; i++){ %>
@@ -73,6 +77,7 @@
               <td><%=incomes[i].pay_period%></td>
               <td><%=incomes[i].yearly%></td>
               <td><a href ="#" class="deleteIncomeLink">DELETE</a>
+              <td><a href ="#" class="updateIncomeLink">EDIT/UPDATE</a>
             </tr>
           <% } %>
         </tbody>
