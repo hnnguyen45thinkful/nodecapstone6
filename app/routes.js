@@ -30,14 +30,38 @@ app.get('/', function(req, res) {
     res.render('profile');
 });
 
-app.get('/income', function(req, res){
+app.get('/income', isLoggedIn, function(req, res){
     // Income.create
     res.render('income.ejs',{user:req.user});
 });
 
-app.get('/expense', function(req, res){
+app.get('/expense', isLoggedIn, function(req, res){
     // Expense.create
-    res.render('expense.ejs',{user:req.user});
+    res.render('expense.ejs',{user:req.user,expense: {}});
+});
+
+app.get('/expenses/:id', isLoggedIn, function(req,res){
+    Expense.findOne({_id:req.params.id}, function(err,expense){
+        if(!err){
+            res.render('expense.ejs',{user:req.user,expense:expense});
+        }
+    });
+});
+
+app.post('/expenses/editexpense/:id', isLoggedIn, function(req,res){
+    Expense.findOneAndUpdate({_id:req.params.id}, req.body, function(err,expense){
+        if(!err){
+            res.redirect('/profile');
+        }
+    });
+});
+
+app.delete('/expense', function(req,res){
+    Expense.findOneAndRemove({_id:req.body.id}, function(err,item){
+        if(!err){
+            res.send({});
+        }
+    });
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
@@ -66,7 +90,7 @@ app.post('/incomes/addincome',function(req,res){
 
 app.post('/expenses/addexpense', function(req,res){
     Expense.create(req.body, function(err, result){
-        if(err != null) res.send('Insert Income Error');
+        if(err !== null) res.send('Insert Income Error');
         else res.redirect('/profile');
     });
 });

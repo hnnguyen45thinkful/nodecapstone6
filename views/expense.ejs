@@ -1,40 +1,48 @@
 <% include includes/headers.ejs %>
 
 <div id="addExpenseContainer">
+<% if(expense.name_of_expense) { %>
+  <form id="addExpenseForm" action="/expenses/editexpense/<%=expense._id%>" method="post">
+<% } else { %>
   <form id="addExpenseForm" action="/expenses/addexpense" method="post">
+<% } %>
     <input type="hidden" name="user_id" value="<%=user._id%>"/>
 
     <ul class="form-style-1">
       <li> 
-        <h5>Add Expense</h5>
+        <% if(expense.name_of_expense) { %>
+          <h5>Edit Expense</h5>
+        <% } else { %>
+          <h5>Add Expense</h5>
+        <% } %>
       </li>
       <li>
         <label>Name of Expense<span class="required">*</span></label>
-        <input class="field-long" type="text" name="name_of_expense" placeholder="Electric Bill/Water/etc..."/>
+        <input class="field-long" type="text" name="name_of_expense" placeholder="Electric Bill/Water/etc..." value="<%= (expense.name_of_expense) ? expense.name_of_expense : '' %>"/>
       </li>
       <li>
         <label>Company/Person Billable To <span class="required">*</span></label>
-        <input class="field-long" type="text" name="company_name" placeholder="Edison"/>
+        <input class="field-long" type="text" name="company_name" placeholder="Edison" value="<%= (expense.company_name) ? expense.company_name : '' %>"/>
       </li>
       <li>
         <label>Payee<span class="required">*</span></label>
-        <input class="field-long" type="text" name="payee" placeholder="Hugh"/>
+        <input class="field-long" type="text" name="payee" placeholder="Hugh" value="<%= (expense.payee) ? expense.payee : '' %>"/>
       </li>
       <li id="payPeriod">
         <label>Fee Period</label>
         <select class="payPeriodSelect field-select" name="pay_period">
-          <option value="Monthly">Monthly</option>
-          <option value="Yearly">Yearly</option>
-          <option value="Weekly">Weekly</option>
+          <option value="Monthly" <%= (expense.pay_period && expense.pay_period=='Month') ? 'selected' : '' %>>Monthly</option>
+          <option value="Yearly" <%= (expense.pay_period && expense.pay_period=='Yearly') ? 'selected' : '' %>>Yearly</option>
+          <option value="Weekly" <%= (expense.pay_period && expense.pay_period=='Weekly') ? 'selected' : '' %>>Weekly</option>
         </select>
       </li>
       <li id="dayOfMonthLi">
         <label><span class="dayOfMonth">Day of Month</span></label>
-        <input class="dayOfMonth field-short" id="field5" type="text" name="day_of_month" placeholder="15"/>
+        <input class="dayOfMonth field-short" id="field5" type="text" name="date_of_month" placeholder="15" value="<%= (expense.date_of_month) ? expense.date_of_month : '' %>"/>
       </li>
       <li>
         <label> <span class="salaryTerm">Monthly  </span>Fee<span class="required">*</span></label>
-        <input class="salary field-short" id="field5" type="text" name="monthly" placeholder="350"/>
+        <input class="salary field-short" id="field5" type="text" name="monthly" placeholder="350" value="<%= (expense.monthly) ? expense.monthly : '' %>"/>
       </li>
       <li>
         <input type="submit" value="Submit"/>

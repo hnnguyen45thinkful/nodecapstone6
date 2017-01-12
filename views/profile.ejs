@@ -36,8 +36,8 @@
               <td><%=expenses[i].pay_period%></td>
               <td><%=expenses[i].date_of_month%></td>
               <td><%=expenses[i].monthly%></td>
-              <td><a href ="#" class="deleteExpenseLink">DELETE</a>
-              <td><a href ="#" class="updateExpenseLink">EDIT/UPDATE</a>
+              <td><a href="#" data-id="<%=expenses[i]._id%>" class="deleteExpenseLink">DELETE</a>
+              <td><a href="/expenses/<%=expenses[i]._id%>" class="updateExpenseLink">EDIT/UPDATE</a>
             </tr>
           <% } %></tbody>
         <tfoot>
@@ -48,6 +48,7 @@
               <td id="totalFeeMonthly"></td>
               <td></td>
               <td></td>
+              <td></td><td></td>
             </th>
           </tr>
         </tfoot>
@@ -90,6 +91,7 @@
               <td></td>
               <td id="totalIncomeWeeklyAfterTax"></td>
               <td></td>
+              <td></td>
             </th>
           </tr>
         </tfoot>
@@ -103,7 +105,6 @@
               <td id="totalIncomeWeekly"></td>
               <td id="totalIncomeMonthly"></td>
               <td id="totalIncomeYearly"></td>
-              <td></td>
             </th>
           </tr>
         </tfoot>
